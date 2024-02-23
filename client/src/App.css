@@ -1,0 +1,9 @@
+.Link {
+	text-decoration: none;
+	color: black;
+}
+
+.Link:hover {
+	color: teal;
+	font-weight: 700;
+}
