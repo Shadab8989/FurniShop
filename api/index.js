@@ -8,7 +8,13 @@ const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 
-app.use(cors());
+app.use(
+	cors({
+		origin: ["https://furni-shop-api.vercel.app"],
+		methods: ["POST", "GET", "PATCH", "PUT", "DELETE"],
+		credentials: true,
+	})
+);
 
 const authRouter = require("./routes/auth");
 const userRouter = require("./routes/users");
