@@ -14,7 +14,7 @@ const Products = ({ category, subCategory, sort }) => {
 		const getProducts = async () => {
 			try {
 				var res;
-				if (category === undefined) {
+				if (!category) {
 					const fetchData = await axios.get(
 						`https://furni-shop-api.vercel.app/api/products`
 					);
