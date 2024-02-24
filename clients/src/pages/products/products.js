@@ -20,7 +20,7 @@ const ProductsPage = () => {
 
 	useEffect(() => {
 		const categoryObject = categories.filter((item) =>
-			item.title.startsWith(categoryName)
+			item.title === categoryName
 		);
 		console.log("object", categoryObject);
 		setCategory(categoryObject[0].title);

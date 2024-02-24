@@ -21,13 +21,13 @@ export const categories = [
 	{
 		id: 4,
 		image: "https://i.ibb.co/vhZP78C/Bedroom.png",
-		title: "Bedroom Furniture",
+		title: "Bedroom",
 		subCategory: ["Bed Frames", "Nightstands", "Wardrobes"],
 	},
 	{
 		id: 5,
 		image: "https://i.ibb.co/KG9h1W1/Outdoor.png",
-		title: "Outdoor Furniture",
+		title: "Outdoor",
 		subCategory: ["Patio Sets", "Sun Loungers", "Outdoor Sofas"],
 	},
 ];
