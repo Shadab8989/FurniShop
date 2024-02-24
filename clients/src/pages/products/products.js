@@ -8,18 +8,16 @@ import { useState, useEffect } from "react";
 import "./products.css";
 
 const ProductsPage = () => {
-	const [categoryName, setCategoryName] = useState(null);
-
+	const location = useLocation().pathname.split("/");
+	const [categoryName, setCategoryName] = useState(
+		location[location.length - 1]
+	);
 	console.log("categoryName", categoryName);
 	const [subCategories, setSubCategories] = useState();
 	const [category, setCategory] = useState("");
 	const [subCategorySelected, setSubCategorySelected] = useState("All");
 	const [sortValue, setSortValue] = useState("Rating");
 
-	const location = useLocation().pathname.split("/");
-	useEffect(() => {
-		setCategoryName(location[location.length - 1]);
-	}, [location]);
 	useEffect(() => {
 		const categoryObject = categories.filter(
 			(item) => item.title === categoryName
