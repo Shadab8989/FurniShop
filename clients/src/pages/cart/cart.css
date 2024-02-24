@@ -46,6 +46,11 @@
 	justify-content: space-between;
 	margin: 10px 0;
 }
+
+.cart-product-detail {
+	display: flex;
+	flex: 2;
+}
 .cart-product-details {
 	flex: 2;
 	display: flex;
