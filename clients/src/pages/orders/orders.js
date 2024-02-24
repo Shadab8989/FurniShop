@@ -2,7 +2,6 @@ import Navbar from "../../components/navbar/navbar";
 import Footer from "../../components/footer/footer";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import ProductItem from "../../components/productItem/productItem";
 import Order from "../../components/order/order";
 import "./orders.css";
 
