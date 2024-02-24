@@ -6,9 +6,9 @@ import "./products.css";
 const Products = ({ category, subCategory, sort }) => {
 	const [productsList, setProductsList] = useState([]);
 	console.log(subCategory);
-	console.log("category",category)
-	console.log("subcategory",subCategory)
-	console.log("sort",sort)
+	console.log("category", category);
+	console.log("subcategory", subCategory);
+	console.log("sort", sort);
 
 	useEffect(() => {
 		const getProducts = async () => {
@@ -21,8 +21,8 @@ const Products = ({ category, subCategory, sort }) => {
 					const filtered = fetchData.data.allProducts.filter(
 						(product) => product.trending === true
 					);
-					res = filtered;
-					setProductsList(res);
+					console.log("Main page", filtered);
+					setProductsList(filtered);
 				} else {
 					if (subCategory === "All") {
 						res = await axios.get(
@@ -35,6 +35,7 @@ const Products = ({ category, subCategory, sort }) => {
 					}
 
 					setProductsList(res.data.allProducts);
+					console.log("products page", res.data.allProducts);
 				}
 				setProductsList((prevVal) =>
 					[...prevVal].sort((a, b) => b.Rating - a.Rating)
