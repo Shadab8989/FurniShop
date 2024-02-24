@@ -13,7 +13,7 @@ const Products = ({ category, subCategory, sort }) => {
 				var res;
 				if (!category) {
 					const fetchData = await axios.get(
-						`http://localhost:5000/api/products`
+						`https://furni-shop-api.vercel.app/api/products`
 					);
 					const filtered = fetchData.data.allProducts.filter(
 						(product) => product.trending === true
@@ -23,11 +23,11 @@ const Products = ({ category, subCategory, sort }) => {
 				} else {
 					if (subCategory === "All") {
 						res = await axios.get(
-							`http://localhost:5000/api/products?category=${category}`
+							`https://furni-shop-api.vercel.app/api/products?category=${category}`
 						);
 					} else {
 						res = await axios.get(
-							`http://localhost:5000/api/products?category=${category}&subCategory=${subCategory}`
+							`https://furni-shop-api.vercel.app/api/products?category=${category}&subCategory=${subCategory}`
 						);
 					}
 
