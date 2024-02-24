@@ -6,6 +6,9 @@ import "./products.css";
 const Products = ({ category, subCategory, sort }) => {
 	const [productsList, setProductsList] = useState([]);
 	console.log(subCategory);
+	console.log("category",category)
+	console.log("subcategory",subCategory)
+	console.log("sort",sort)
 
 	useEffect(() => {
 		const getProducts = async () => {
