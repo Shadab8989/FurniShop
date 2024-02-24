@@ -108,7 +108,7 @@
 	.cart-product {
 		flex-direction: column;
 	}
-	.cart-price-detail {
+	.cart-product-detail {
 		flex-direction: column;
 	}
 	.cart-product-amount {

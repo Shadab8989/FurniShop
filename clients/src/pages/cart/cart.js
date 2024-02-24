@@ -84,7 +84,7 @@ const Cart = () => {
 											</div>
 										</Link>
 										<div className="cart-price-detail">
-											<div className="cart-amount-container">
+											<div className="cart-product-amount-container">
 												<AddOutlinedIcon
 													style={{ cursor: "pointer" }}
 													onClick={() =>
