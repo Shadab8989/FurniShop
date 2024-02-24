@@ -1,0 +1,37 @@
+.products-page-container {
+}
+.products-page-title {
+	margin: 20px;
+	font-size: 40px;
+}
+
+.products-page-filter-container {
+	display: flex;
+	justify-content: space-between;
+}
+.products-page-filter {
+	margin: 20px;
+}
+.products-page-filter-text {
+	font-size: 20px;
+	font-weight: 600;
+	margin-right: 20px;
+}
+.products-page-select {
+	padding: 10px;
+	margin-right: 20px;
+}
+.products-page-option {
+	padding: 10px;
+}
+
+@media only screen and (max-width: 480px) {
+	.products-page-filter {
+		margin: 0 10px;
+		display: flex;
+		flex-direction: column;
+	}
+	.products-page-filter-text {
+		margin: 10px 0px;
+	}
+}

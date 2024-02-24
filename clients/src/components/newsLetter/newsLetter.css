@@ -1,0 +1,61 @@
+.newsLetter-container {
+	height: 50vh;
+	background-color: #fcf5f5;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.newsLetter-title {
+	font-size: 4rem;
+	margin-bottom: 20px;
+}
+.newsLetter-description {
+	font-size: 24px;
+	font-weight: 300;
+	margin-bottom: 20px;
+}
+.newsLetter-input-container {
+	width: 40%;
+	height: 40px;
+	background-color: white;
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid teal;
+	border-radius: 10px;
+}
+.newsLetter-input {
+	border-radius: 10px;
+	border: none;
+	flex: 10;
+	padding-left: 20px;
+}
+.newsLetter-input:focus {
+	outline: none;
+}
+.newsLetter-button {
+	border-radius: 0 10px 10px 0;
+	flex: 1;
+	border: none;
+	background-color: antiquewhite;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.newsLetter-button:hover {
+	background-color: rgb(214, 181, 136);
+}
+.newsLetter-button:disabled {
+	background-color: not-allowed;
+}
+.newsLetter-message {
+}
+
+@media only screen and (max-width: 480px) {
+	.newsLetter-input-container {
+		width: 80%;
+	}
+	.newsLetter-description {
+		text-align: center;
+	}
+}
