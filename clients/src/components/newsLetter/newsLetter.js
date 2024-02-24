@@ -1,4 +1,5 @@
-import SendIcon from '@mui/icons-material/Send';import { useState } from "react";
+import SendIcon from "@mui/icons-material/Send";
+import { useState } from "react";
 import "./newsLetter.css";
 
 const NewsLetter = () => {
@@ -7,6 +8,7 @@ const NewsLetter = () => {
 	const handleClick = () => {
 		if (email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
 			setDisplayConformation(true);
+			setEmail("");
 		}
 		setTimeout(() => {
 			setDisplayConformation(false);
