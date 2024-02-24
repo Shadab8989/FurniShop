@@ -26,7 +26,7 @@ const ProductsPage = () => {
 		setCategory(categoryObject[0].title);
 		setSortValue("Rating")
 		setSubCategories(categoryObject[0].subCategory);
-	}, [categoryName]);
+	}, []);
 	const handleSubCategory = (e) => {
 		console.log(e.target.value);
 		setSubCategorySelected(e.target.value);

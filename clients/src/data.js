@@ -65,7 +65,6 @@ export const products = [
 		price: 999.99,
 		description:
 			"Introducing our Chesterfield Sofa, a timeless piece of furniture that exudes sophistication and charm. Crafted with meticulous attention to detail, this sofa features classic rolled arms and deep button tufting for a traditional look. Its luxurious upholstery adds elegance to any living space, while the spacious seating area ensures comfort for hours of relaxation. Whether placed in a formal living room or a cozy den, this sofa effortlessly elevates the ambiance of your home.",
-
 		image: "https://i.ibb.co/jRWYptF/Chesterfield-Sofa.jpg",
 		id: 1,
 		Rating: 4.6,
@@ -78,7 +77,6 @@ export const products = [
 		price: 1500,
 		description:
 			"Introducing our Sectional Sofa with Chaise, a versatile and stylish addition to your living space. Designed for modern comfort, this sectional sofa features a spacious chaise lounge perfect for lounging or napping. With its plush cushions and supportive backrest, it offers optimal comfort for relaxing with family and friends. The modular design allows you to customize the layout to suit your space, making it ideal for small apartments or large living rooms. Elevate your home with the contemporary flair and comfort of our sectional sofa.",
-
 		// image: `${process.env.PUBLIC_URL}/images/Sofas/Sectional_Sofa_with_Chaise.jpeg`,
 		image: "https://i.ibb.co/QcVKkbP/Sectional-Sofa-with-Chaise.jpg",
 		id: 2,
