@@ -10,7 +10,7 @@ app.use(express.json());
 
 app.use(
 	cors({
-		origin: ["https://furni-shop-client.vercel.app/"],
+		origin: ["https://furni-shop-api.vercel.app/"],
 		methods: ["POST", "GET", "PATCH", "PUT", "DELETE"],
 		credentials: true,
 	})
