@@ -44,7 +44,8 @@ export const logout = async (dispatch) => {
 export const signIn = async (dispatch, user) => {
 	try {
 		const res = await Request.post("/auth/register", user);
-
+		dispatch(emptyTheCart());
+		dispatch(emptyWishlist());
 		dispatch(signInSuccess(res.data));
 	} catch (error) {
 		if (error.response.data.message.includes("username")) {
