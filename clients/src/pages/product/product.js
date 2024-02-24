@@ -26,7 +26,7 @@ const SingleProduct = () => {
 		const getProduct = async () => {
 			try {
 				const res = await axios.get(
-					`http://localhost:5000/api/products/${productId}`
+					`https://furni-shop-api.vercel.app/api/products/${productId}`
 				);
 				setProduct(res.data);
 			} catch (err) {
