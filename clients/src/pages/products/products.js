@@ -1,4 +1,3 @@
-
 import Navbar from "../../components/navbar/navbar";
 import Products from "../../components/products/products";
 import NewsLetter from "../../components/newsLetter/newsLetter";
@@ -8,10 +7,10 @@ import { categories } from "../../data";
 import { useState, useEffect } from "react";
 import "./products.css";
 
-
 const ProductsPage = () => {
+	const [categoryName, setCategoryName] = useState(null);
 	const location = useLocation().pathname.split("/");
-	const categoryName = location[location.length - 1];
+	setCategoryName(location[location.length - 1]);
 	console.log("categoryName", categoryName);
 	const [subCategories, setSubCategories] = useState();
 	const [category, setCategory] = useState("");
@@ -19,12 +18,12 @@ const ProductsPage = () => {
 	const [sortValue, setSortValue] = useState("Rating");
 
 	useEffect(() => {
-		const categoryObject = categories.filter((item) =>
-			item.title === categoryName
+		const categoryObject = categories.filter(
+			(item) => item.title === categoryName
 		);
 		console.log("object", categoryObject);
 		setCategory(categoryObject[0].title);
-		setSortValue("Rating")
+		setSortValue("Rating");
 		setSubCategories(categoryObject[0].subCategory);
 	}, [categoryName]);
 	const handleSubCategory = (e) => {
