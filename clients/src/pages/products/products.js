@@ -1,3 +1,4 @@
+
 import Navbar from "../../components/navbar/navbar";
 import Products from "../../components/products/products";
 import NewsLetter from "../../components/newsLetter/newsLetter";
@@ -6,6 +7,7 @@ import { useLocation } from "react-router-dom";
 import { categories } from "../../data";
 import { useState, useEffect } from "react";
 import "./products.css";
+
 
 const ProductsPage = () => {
 	const location = useLocation().pathname.split("/");
@@ -21,8 +23,8 @@ const ProductsPage = () => {
 			item.title.startsWith(categoryName)
 		);
 		console.log("object", categoryObject);
-		setCategory(categoryObject[0].title.split(" ")[0]);
-		setSortValue("Rating");
+		setCategory(categoryObject[0].title);
+		setSortValue("Rating")
 		setSubCategories(categoryObject[0].subCategory);
 	}, [categoryName]);
 	const handleSubCategory = (e) => {

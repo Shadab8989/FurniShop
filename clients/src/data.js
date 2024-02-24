@@ -1,27 +1,3 @@
-export const sliderItems = [
-	{
-		id: 1,
-		img: "https://i.ibb.co/dMyHvr9/slider-1.png",
-		title: "Sale 1",
-		description: "Description 1",
-		bg: "f5fafd",
-	},
-	{
-		id: 2,
-		img: "https://i.ibb.co/BKcBHzB/slider-2.png",
-		title: "Sale 2",
-		description: "Description 2",
-		bg: "fcf1ed",
-	},
-	{
-		id: 3,
-		img: "https://i.ibb.co/jwhgCrR/slider-3.png",
-		title: "Sale 3",
-		description: "Description 3",
-		bg: "fbf0f4",
-	},
-];
-
 export const categories = [
 	{
 		id: 1,
