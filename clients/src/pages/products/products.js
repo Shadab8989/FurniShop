@@ -10,7 +10,6 @@ import "./products.css";
 const ProductsPage = () => {
 	const location = useLocation().pathname.split("/");
 	const categoryName = location[location.length - 1];
-	console.log("categoryName", categoryName);
 	const [subCategories, setSubCategories] = useState();
 	const [category, setCategory] = useState("");
 	const [subCategorySelected, setSubCategorySelected] = useState("All");
@@ -20,15 +19,12 @@ const ProductsPage = () => {
 		const categoryObject = categories.filter(
 			(item) => item.title === categoryName
 		);
-		console.log("object", categoryObject);
 		setCategory(categoryObject[0].title);
 		setSortValue("Rating");
-		document.getElementsByClassName("products-page-select").selectedIndex = 0;
-
+		document.getElementsByClassName("products-page-select").value = 'Rating';
 		setSubCategories(categoryObject[0].subCategory);
 	}, [categoryName]);
 	const handleSubCategory = (e) => {
-		console.log(e.target.value);
 		setSubCategorySelected(e.target.value);
 	};
 	const handleSortProducts = (e) => {
