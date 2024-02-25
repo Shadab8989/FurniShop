@@ -9,10 +9,11 @@ const NewsLetter = () => {
 	const handleClick = () => {
 		if (email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
 			setDisplayConformation(true);
-			setDisplayMessage("Successfully Subscribed to NewsLetter")
+			setDisplayMessage("Successfully Subscribed to NewsLetter");
 			setEmail("");
 		} else {
-			setDisplayMessage("Please Enter Valid Email Address")
+			setDisplayConformation(true);
+			setDisplayMessage("Please Enter Valid Email Address");
 		}
 		setTimeout(() => {
 			setDisplayConformation(false);
