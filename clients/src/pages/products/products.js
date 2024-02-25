@@ -1,4 +1,3 @@
-
 import Navbar from "../../components/navbar/navbar";
 import Products from "../../components/products/products";
 import NewsLetter from "../../components/newsLetter/newsLetter";
@@ -7,7 +6,6 @@ import { useLocation } from "react-router-dom";
 import { categories } from "../../data";
 import { useState, useEffect } from "react";
 import "./products.css";
-
 
 const ProductsPage = () => {
 	const location = useLocation().pathname.split("/");
@@ -19,12 +17,14 @@ const ProductsPage = () => {
 	const [sortValue, setSortValue] = useState("Rating");
 
 	useEffect(() => {
-		const categoryObject = categories.filter((item) =>
-			item.title === categoryName
+		const categoryObject = categories.filter(
+			(item) => item.title === categoryName
 		);
 		console.log("object", categoryObject);
 		setCategory(categoryObject[0].title);
-		setSortValue("Rating")
+		setSortValue("Rating");
+		document.getElementsByClassName("products-page-select").selectedIndex = 0;
+
 		setSubCategories(categoryObject[0].subCategory);
 	}, [categoryName]);
 	const handleSubCategory = (e) => {
@@ -83,11 +83,13 @@ const ProductsPage = () => {
 						</select>
 					</div>
 				</div>
-				{category && <Products
-					category={category}
-					subCategory={subCategorySelected}
-					sort={sortValue}
-				/>}
+				{category && (
+					<Products
+						category={category}
+						subCategory={subCategorySelected}
+						sort={sortValue}
+					/>
+				)}
 				<NewsLetter />
 				<Footer />
 			</div>
