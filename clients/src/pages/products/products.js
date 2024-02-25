@@ -83,11 +83,11 @@ const ProductsPage = () => {
 						</select>
 					</div>
 				</div>
-				<Products
+				{category && <Products
 					category={category}
 					subCategory={subCategorySelected}
 					sort={sortValue}
-				/>
+				/>}
 				<NewsLetter />
 				<Footer />
 			</div>
