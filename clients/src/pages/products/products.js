@@ -83,6 +83,7 @@ const ProductsPage = () => {
 						</select>
 					</div>
 				</div>
+				{!category && <p>Loading...</p>}
 				{category && <Products
 					category={category}
 					subCategory={subCategorySelected}
