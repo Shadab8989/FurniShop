@@ -5,10 +5,14 @@ import "./newsLetter.css";
 const NewsLetter = () => {
 	const [email, setEmail] = useState("");
 	const [displayConformation, setDisplayConformation] = useState(false);
+	const [displayMessage, setDisplayMessage] = useState("");
 	const handleClick = () => {
 		if (email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
 			setDisplayConformation(true);
+			setDisplayMessage("Successfully Subscribed to NewsLetter")
 			setEmail("");
+		} else {
+			setDisplayMessage("Please Enter Valid Email Address")
 		}
 		setTimeout(() => {
 			setDisplayConformation(false);
@@ -37,7 +41,7 @@ const NewsLetter = () => {
 						<SendIcon />
 					</button>
 				</div>
-				{displayConformation && <p>Successfully Subscribed to NewsLetter</p>}
+				{displayConformation && <p>{displayMessage}</p>}
 			</div>
 		</>
 	);
