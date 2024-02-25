@@ -65,6 +65,7 @@ const Products = ({ category, subCategory, sort }) => {
 	return (
 		<>
 			<div className="products-container">
+				{!productsList && <p>Loading ...</p>}
 				{productsList &&
 					productsList.map((product) => (
 						<ProductItem product={product} key={product.id} />
