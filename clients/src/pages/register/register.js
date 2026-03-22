@@ -63,7 +63,7 @@ const Register = () => {
 							data in accordance with the <b>PRIVACY POLICY</b>
 						</span>
 						<Link className="Link" to="/login">
-							<p className="register-p">Already have an acount? Login </p>
+							<p className="register-p">Already have an account? Login </p>
 						</Link>
 						<button
 							className="register-button"
