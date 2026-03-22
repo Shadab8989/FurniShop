@@ -67,7 +67,7 @@ export const addProductToDbCart = async (productsInCart, user, product) => {
 		alert("product already in the cart");
 	} else {
 		try {
-			const res = await Request.patch(`users/addtocart/${userId}`, product);
+			await Request.patch(`users/addtocart/${userId}`, product);
 		} catch (error) {
 			console.log(error);
 		}
@@ -76,7 +76,7 @@ export const addProductToDbCart = async (productsInCart, user, product) => {
 export const updateAmount = async (user, product) => {
 	const userId = user._id;
 	try {
-		const res = await Request.patch(`users/incrementamount/${userId}`, product);
+		await Request.patch(`users/incrementamount/${userId}`, product);
 	} catch (error) {
 		console.log(error);
 	}
@@ -85,7 +85,7 @@ export const updateAmount = async (user, product) => {
 export const removeProductFromDbCart = async (user, product) => {
 	const userId = user._id;
 	try {
-		const res = await Request.patch(`users/removefromcart/${userId}`, product);
+		await Request.patch(`users/removefromcart/${userId}`, product);
 	} catch (error) {
 		console.log(error);
 	}
@@ -102,13 +102,13 @@ export const addRemoveFromDbWishlist = async (
 	);
 	if (productExists.length === 0) {
 		try {
-			const res = await Request.patch(`users/addtowishlist/${userId}`, product);
+			await Request.patch(`users/addtowishlist/${userId}`, product);
 		} catch (error) {
 			console.log(error);
 		}
 	} else {
 		try {
-			const res = await Request.patch(
+			await Request.patch(
 				`users/removefromwishlist/${userId}`,
 				product
 			);
@@ -121,7 +121,7 @@ export const addRemoveFromDbWishlist = async (
 export const addProductToDbOrders = async (user, order) => {
 	const userId = user._id;
 	try {
-		const res = await Request.patch(`/users/addtoorders/${userId}`, order);
+		await Request.patch(`/users/addtoorders/${userId}`, order);
 	} catch (error) {
 		console.log(error);
 	}

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../redux/apiCalls";
@@ -45,7 +45,7 @@ const Login = () => {
 						{/* {error && <P>Something went wrong</P>} */}
 
 						<Link className="Link" to="/register">
-							<a className="login-a">Create a new Account</a>
+							<span className="login-a">Create a new Account</span>
 						</Link>
 					</form>
 				</div>

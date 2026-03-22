@@ -15,7 +15,7 @@ const Register = () => {
 
 	const handleCreateClick = (e) => {
 		e.preventDefault();
-		if (!email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+		if (!email.match(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/)) {
 			alert("Please enter valid email address");
 		} else if (password !== confirmPassword) {
 			alert("Passwords doesn't match");
