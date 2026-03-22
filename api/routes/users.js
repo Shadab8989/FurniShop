@@ -11,25 +11,25 @@ const {
 	removeFromWishlist,
 	addToOrders,
 } = require("../controllers/users");
-
+const { verifyTokenAndAuthorization } = require("../middleware/verifyToken");
 
 
 //UPDATE USER
-router.put("/:id", updateUser);
+router.put("/:id", verifyTokenAndAuthorization, updateUser);
 
 //DELETE USER
-
-router.delete("/:id", deleteUser);
+router.delete("/:id", verifyTokenAndAuthorization, deleteUser);
 
 //Add to cartProducts array.
-router.patch("/addtocart/:id", addToCart);
+router.patch("/addtocart/:id", verifyTokenAndAuthorization, addToCart);
 //Remove from cartProducts array.
-router.patch("/removefromcart/:id", removeFromCart);
+router.patch("/removefromcart/:id", verifyTokenAndAuthorization, removeFromCart);
 //Update product amount
-router.patch("/incrementamount/:id", UpdateProductAmount);
+router.patch("/incrementamount/:id", verifyTokenAndAuthorization, UpdateProductAmount);
 //Wishlist addition removal
-router.patch("/addtowishlist/:id", addToWishlist);
-router.patch("/removefromwishlist/:id", removeFromWishlist);
+router.patch("/addtowishlist/:id", verifyTokenAndAuthorization, addToWishlist);
+router.patch("/removefromwishlist/:id", verifyTokenAndAuthorization, removeFromWishlist);
 //Add to orders
-router.patch("/addtoorders/:id", addToOrders);
+router.patch("/addtoorders/:id", verifyTokenAndAuthorization, addToOrders);
 module.exports = router;
+

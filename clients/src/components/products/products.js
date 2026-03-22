@@ -1,47 +1,38 @@
 import ProductItem from "../productItem/productItem";
 import { useState, useEffect } from "react";
-import axios from "axios";
+import { Request } from "../../requestMethods";
 import "./products.css";
 
 const Products = ({ category, subCategory, sort }) => {
 	const [productsList, setProductsList] = useState([]);
-	console.log(subCategory);
-	console.log("category", category);
-	console.log("subcategory", subCategory);
-	console.log("sort", sort);
+
 
 	useEffect(() => {
 		const getProducts = async () => {
 			try {
 				var res;
 				if (!category) {
-					const fetchData = await axios.get(
-						`https://furni-shop-api.vercel.app/api/products`
-					);
+					const fetchData = await Request.get("/products");
 					const filtered = fetchData.data.allProducts.filter(
 						(product) => product.trending === true
 					);
-					console.log("Main page", filtered);
 					setProductsList(filtered);
 				} else {
 					if (subCategory === "All") {
-						res = await axios.get(
-							`https://furni-shop-api.vercel.app/api/products?category=${category}`
-						);
+						res = await Request.get(`/products?category=${category}`);
 					} else {
-						res = await axios.get(
-							`https://furni-shop-api.vercel.app/api/products?category=${category}&subCategory=${subCategory}`
+						res = await Request.get(
+							`/products?category=${category}&subCategory=${subCategory}`
 						);
 					}
 
 					setProductsList(res.data.allProducts);
-					console.log("products page", res.data.allProducts);
 				}
 				setProductsList((prevVal) =>
 					[...prevVal].sort((a, b) => b.Rating - a.Rating)
 				);
 			} catch (err) {
-				console.log("error is", err.message);
+				console.error(err.message);
 			}
 		};
 		getProducts();

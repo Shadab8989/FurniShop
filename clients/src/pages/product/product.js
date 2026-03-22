@@ -2,7 +2,7 @@ import Navbar from "../../components/navbar/navbar";
 import NewsLetter from "../../components/newsLetter/newsLetter";
 import Footer from "../../components/footer/footer";
 import { useLocation } from "react-router-dom";
-import axios from "axios";
+import { Request } from "../../requestMethods";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addProductToCart } from "../../redux/slices/cartSlice";
@@ -25,12 +25,10 @@ const SingleProduct = () => {
 	useEffect(() => {
 		const getProduct = async () => {
 			try {
-				const res = await axios.get(
-					`https://furni-shop-api.vercel.app/api/products/${productId}`
-				);
+					const res = await Request.get(`/products/${productId}`);
 				setProduct(res.data);
 			} catch (err) {
-				console.log(err.message);
+				console.error(err.message);
 			}
 		};
 		getProduct();
